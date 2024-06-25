@@ -4,6 +4,8 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+        auto : "",
+        pause : false,
         activeImage : 0,
         slides : [
                 {
@@ -47,9 +49,35 @@ createApp({
             }
         },
 
-        bigImg(){
-            this.activeImage = this.i
+        bigImg(i){
+            this.activeImage = i
         },
+
+        autoPlay(){
+            console.log("autoplay")
+                if(!this.pause){
+                    this.auto = setInterval(this.goNext,3000)
+                    this.pause = true
+                } else {
+                    clearInterval(this.auto);
+                    this.pause = false
+                }
+        },
+
+        // hoverStop(){
+        //     console.log("hover")
+        //     if(this.pause){
+        //         clearInterval(this.auto);
+        //         this.pause = true
+        //     } else {
+        //         this.auto = setInterval(this.goNext,3000)
+        //         this.pause = false
+        //     }
+        // }
+    },
+    mounted(){
+        this.autoPlay();
+        console.log("montato")
     },
 }).mount('#app')
 

@@ -15,7 +15,7 @@
 
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
-
+                <!-- @mouseover="hoverStop" -->
                 <div class="item">
                     <img :src="slides[activeImage].image" :alt="slides[activeImage].title" />
                     <div class="text">
@@ -29,7 +29,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="goPrev"></div>
                     <div class="next" @click="goNext"></div>
-                    <div class="thumb" :class='activeImage === i ? "active" : ""' v-for="(thumbImg, i) in slides" @click="bigImg">
+                    <div class="thumb" :class='activeImage === i ? "active" : ""' v-for="(thumbImg, i) in slides" @click="bigImg(i)">
                         <img :src="thumbImg.image" :alt="thumbImg.title"/>
                     </div>
                     <!-- <div class="thumb">
