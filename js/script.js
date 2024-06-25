@@ -45,7 +45,11 @@ createApp({
             } else {
                 this.activeImage--;
             }
-        }
+        },
+
+        bigImg(){
+            this.activeImage = this.i
+        },
     },
 }).mount('#app')
 

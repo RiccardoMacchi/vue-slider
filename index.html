@@ -29,8 +29,8 @@
                 <div class="thumbs">
                     <div class="prev" @click="goPrev"></div>
                     <div class="next" @click="goNext"></div>
-                    <div class="thumb" :class='activeImage === i ? "active" : ""' v-for="(thumbImg, i) in slides">
-                        <img :src="thumbImg.image" :alt="thumbImg.title" />
+                    <div class="thumb" :class='activeImage === i ? "active" : ""' v-for="(thumbImg, i) in slides" @click="bigImg">
+                        <img :src="thumbImg.image" :alt="thumbImg.title"/>
                     </div>
                     <!-- <div class="thumb">
                         <img src="img/02.webp" alt="Ratchet & Clank" />
