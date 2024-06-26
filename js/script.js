@@ -59,24 +59,18 @@ createApp({
                     this.auto = setInterval(this.goNext,3000)
                     this.pause = true
                 } else {
-                    clearInterval(this.auto);
-                    this.pause = false
+                    
                 }
         },
 
-        // hoverStop(){
-        //     console.log("hover")
-        //     if(this.pause){
-        //         clearInterval(this.auto);
-        //         this.pause = true
-        //     } else {
-        //         this.auto = setInterval(this.goNext,3000)
-        //         this.pause = false
-        //     }
-        // }
+        hoverStop(){
+            console.log("hover");
+            clearInterval(this.auto);
+            this.pause = false
+        }
     },
     mounted(){
-        this.autoPlay();
+        // this.autoPlay();
         console.log("montato")
     },
 }).mount('#app')
